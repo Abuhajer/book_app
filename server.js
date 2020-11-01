@@ -13,8 +13,12 @@ app.set('view engine', 'ejs');
 //---------------
 // Routes
 app.get('/hello', firstpage)
+app.get('/searches/new', searchpage)
 
 
+function searchpage(request, response) {
+  response.render('pages/searches/new')
+}
 function firstpage(request, response) {
   response.render('pages/index')
 }
