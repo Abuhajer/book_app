@@ -9,16 +9,28 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <h1>Best Books</h1>
+
+        <h2>Search by Title or Author</h2>
+    </header>
 
     <main>
         <form action="/searches" method="POST">
 
-            <input type="text" placeholder='Enter a title or author' name="title">
-            <label for="Title">Title</label>
-            <input type="radio" name="typeserach" value='Title'>
-            <label for="Author">Author</label>
-            <input type="radio" name="typeserach" value='Author'>
+            <input type="text" placeholder='Enter a title or author' name="title" id="firstInput">
+            <br>
+            <br>
+            <p>
+                <label for="Title">Title</label>
+                <input type="radio" name="typeserach" value='Title'>
+            </p>
+            <br>
+            <p>
+                <label for="Author">Author</label>
+                <input type="radio" name="typeserach" value='Author'>
+            </p>
+            <br>
             <button>Search the Google Books API</button>
 
         </form>
