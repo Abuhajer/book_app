@@ -4,23 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='layout.css'>
+    <link rel="stylesheet" href='base.css'>
     <title>Document</title>
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <h1>Best Books</h1>
+
+        <h2>Search by Title or Author</h2>
+    </header>
 
     <main>
         <% result.forEach(elm=>{ %>
         <section class="book-container">
-        <p class="book-title"><%=elm.title%></p>
-        <p class="book-authors"><%=elm.authors%></p>
-        <p class="book-des"><%=elm.description%></p>
-        <img class="book-img" src="<%=elm.imageLinks%>">
-    </section>
-            <% }) %>
-       
+            <img class="book-img" src="<%=elm.imageLinks%>">
+            <p class="book-title"><%=elm.title%></p>
+            <p class="book-authors"><%=elm.authors%></p>
+            <p class="book-des"><%=elm.description%></p>
+        </section>
+        <% }) %>
+
     </main>
 
     <footer></footer>
