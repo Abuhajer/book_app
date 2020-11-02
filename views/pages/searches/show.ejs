@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='layout.css'>
     <title>Document</title>
 </head>
 
@@ -12,12 +13,12 @@
 
     <main>
         <% result.forEach(elm=>{ %>
-        <p><%=elm.title%></p>
-        <p><%=elm.authors%></p>
-        <p><%=elm.description%></p>
-        <img src="<%=elm.imageLinks%>">
-
-
+        <section class="book-container">
+        <p class="book-title"><%=elm.title%></p>
+        <p class="book-authors"><%=elm.authors%></p>
+        <p class="book-des"><%=elm.description%></p>
+        <img class="book-img" src="<%=elm.imageLinks%>">
+    </section>
             <% }) %>
        
     </main>
