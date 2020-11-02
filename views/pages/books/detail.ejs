@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='/base.css'>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Best Books</h1>
+
+        <h2>Search by Title or Author</h2>
+    </header>
+
+    <main>
+        <section class="book-container">
+            <img class="book-img" src="<%=result.image_url%>">
+            <p class="book-title"><%=result.title%></p>
+            <p class="book-authors"><%=result.author%></p>
+            <p class="book-des"><%=result.description%></p>
+            <p class="book-des"><%=result.isbn%></p>
+            <p class="book-des"><%=result.categories%></p>
+
+        </section>
+    </main>
+
+    <footer></footer>
+
+</html>

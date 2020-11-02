@@ -1,0 +1,8 @@
+
+
+INSERT INTO Books (title,author,isbn,image_url,description,categories) VALUES('Dune','Frank Herbert','ISBN_13 9780441013593','https://books.google.com/books/content?id=B1hSG45JCX4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api','Follows the adventures of Paul Atreides, the son of a betrayed duke given up for dead on a treacherous desert planet and adopted by its fierce, nomadic people, who help him unravel his most unexpected destiny.','Scince');
+
+
+
+
+INSERT INTO Books (title,author,isbn,image_url,description,categories) VALUES('Chrome OS and Secret of Google','Anto.Y','ISBN_13 9783659171277','http://books.google.com/books/content?id=Me9vBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api','“Move on to cloud; take cloud OS on your pocket “the main concept of this book is to explain about cloud OS (Chrome OS) administration. The need for Cloud OS is, in the present Operating system if there is any hard disk failure all the data will be lost but with the help of Cloud OS if there is any failure in the chrome book means also the data will not be lost. It will be stored in the cloud and the user can retrieve them. The tips to manage the team within an enterprise with cloud OS are listed neatly. The complete Chrome OS shortcuts and working with command lines are also explained. The installation of Chrome OS in a Chrome book and netbook are given as with neat screenshots step by step process. The entire customization settings of this Chrome OS are elaborately given. Secret of search engines are explained. Many unknown secret of Google and Google products are also given. This book helps to gain more knowledge and you will feel like reading it again and again','Romance');

@@ -22,6 +22,19 @@
             <p class="book-title"><%=elm.title%></p>
             <p class="book-authors"><%=elm.authors%></p>
             <p class="book-des"><%=elm.description%></p>
+            <p class="book-des"><%=elm.isbn%></p>
+
+            <form action="/books" method="POST">
+                <input type="hidden" value="<%=elm.title%>" name="title"></input>
+                <input type="hidden" value="<%=elm.authors%>" name="authors"></input>
+                <input type="hidden" value="<%=elm.description%>" name="description"></input>
+                <input type="hidden" value="<%=elm.imageLinks%>" name="imageLinks"></input>
+                <input type="hidden" value="<%=elm.isbn%>" name="isbn"></input>
+                <input type="hidden" value="<%=elm.categories%>" name="categories"></input>
+
+                <button type="submit" >Add to collection</button>
+
+            </form>
         </section>
         <% }) %>
 

@@ -7,10 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <h2> <%=result.length %></h2>
+
+    </header>
 
     <main>
-        <h1>Hello World</h1>
+        <% result.forEach(elm=>{ %>
+            <section class="book-container">
+                <img class="book-img" src="<%=elm.image_url%>">
+                <p class="book-title"><%=elm.title%> </p>
+                <p class="book-authors"><%=elm.author%></p>
+                <a href="books/<%=elm.id%>">show Details</a>
+            </section>
+            <% }) %>
+    
     </main>
 
     <footer></footer>
