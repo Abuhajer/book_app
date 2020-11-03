@@ -5,7 +5,9 @@ const express = require('express');
 const superagent = require('superagent');
 const cors = require('cors');
 const pg = require('pg');
-const { response } = require('express');
+const methodOverride = require('method-override');
+
+// const { response } = require('express');
 
 require('dotenv').config()
 const PORT = process.env.PORT || 3000;
@@ -17,7 +19,7 @@ const BookKey = process.env.BookKey;
 app.use(express.urlencoded({ extended: true })); //we added to get the values from form by request them
 const DATABASE_URL = process.env.DATABASE_URL;
 const client = new pg.Client(DATABASE_URL)
-
+app.use(methodOverride('_method'));
 //---------------
 // Routes
 app.get('/', firstpage)
@@ -25,23 +27,51 @@ app.get('/searches/new', searchpage)
 app.post('/searches', handleBooks)
 app.get('/books/:id', getDetails)
 app.post('/books', setBook)
+app.post('/books/UpdatePage/:id', ReadBook)
+
+app.put('/books/:id', updateDetails);
+app.delete('/books/:id', deleteBook);
 //---------------------------
 //handler functions
 //---------------------------
+function ReadBook(request,response){
+
+  const sql = 'SELECT * FROM Books WHERE id=$1;';
+  const parametr = [request.params.id];
+  client.query(sql, parametr).then(data => response.render('pages/books/edit', { result: data.rows[0] }))
+
+}
+//----------------------------
+function deleteBook(request,response){
+  const taskId = request.params.id;
+  console.log(taskId);
+  const sql = 'DELETE FROM books WHERE id=$1';
+  client.query(sql, [taskId]).then(()=>{
+    response.redirect('/');
+  });
+}
+function updateDetails(request, response) {
+  const { image_url, title, authors, description, isbn, categories } = request.body;
+  const sql = 'UPDATE books SET title=$2, image_url=$1, author=$3, description=$4,isbn=$5, categories=$6 WHERE id=$7 ;';
+  const parametr = [image_url, title, authors, description, isbn, categories, request.params.id];
+  client.query(sql, parametr).then(() => {
+    response.redirect(`/books/${parametr[6]}`)
+  });
+}
+//---------------------------
 function getDetails(request, response) {
   const sql = 'SELECT * FROM Books WHERE id=$1;';
-  console.log(request.params.id)
   const parametr = [request.params.id];
   client.query(sql, parametr).then(data => response.render('pages/books/detail', { result: data.rows[0] }))
 }
-//---------------------
+//----------------------------
 function setBook(request, respnse) {
 
   const { title, authors, description, imageLinks, isbn, categories } = request.body;
   let counter;
   const sql0 = 'SELECT * FROM Books;';
   client.query(sql0).then(alldata => {
-    counter=alldata.rows.length;
+    counter = alldata.rows.length;
     const sql1 = 'SELECT * FROM Books WHERE isbn=$1;';
     const parametr1 = [isbn];
     client.query(sql1, parametr1).then(data => {
@@ -91,7 +121,7 @@ function handleBooks(request, response) {
     data.body.items.forEach(element => {
       books.push(new Book(element));
     });
-    response.render('pages/searches/show',{ result: books })
+    response.render('pages/searches/show', { result: books })
 
   })
 
@@ -108,9 +138,9 @@ function firstpage(request, response) {
 
 }
 //-----------------------------
-function errorHandling(request,response,massage){
-  response.render('pages/error', { error: massage})
-}
+// function errorHandling(request,response,massage){
+//   response.render('pages/error', { error: massage})
+// }
 
 
 //-------------------------------

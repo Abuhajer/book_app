@@ -24,7 +24,17 @@
             <p class="book-des"><%=result.isbn%></p>
             <p class="book-des"><%=result.categories%></p>
 
+            <form action="/books/<%= result.id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Book">
+            </form>
         </section>
+
+        <form action="UpdatePage/<%= result.id %>" method="POST">
+            <button type="submit">Update Details</button>
+        </form>
+
+
+
     </main>
 
     <footer></footer>
