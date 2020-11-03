@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+     
+    <form action="/books/<%= result.id %>?_method=PUT" method="POST">
+        <input type="text" value="<%=result.image_url%>" name="image_url"></input>
+        <input type="text" value="<%=result.title%>" name="title"></input>
+                <input type="text" value="<%=result.author%>" name="authors"></input>
+                <textarea name="description"><%=result.description%></textarea>
+                <input type="text" value="<%=result.isbn%>" name="isbn"></input>
+                <input type="text" value="<%=result.categories%>" name="categories"></input>
+
+                <button type="submit" >Update Book</button>
+       
+    </form>
+</body>
+
+</html>
