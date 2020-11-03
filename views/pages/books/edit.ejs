@@ -4,21 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='/base.css'>
     <title>Document</title>
 </head>
 
 <body>
-     
-    <form action="/books/<%= result.id %>?_method=PUT" method="POST">
-        <input type="text" value="<%=result.image_url%>" name="image_url"></input>
-        <input type="text" value="<%=result.title%>" name="title"></input>
-                <input type="text" value="<%=result.author%>" name="authors"></input>
-                <textarea name="description"><%=result.description%></textarea>
-                <input type="text" value="<%=result.isbn%>" name="isbn"></input>
-                <input type="text" value="<%=result.categories%>" name="categories"></input>
+    <header>
+        <h1>Best Books</h1>
+        
 
-                <button type="submit" >Update Book</button>
-       
+        <h2>Search by Title or Author
+
+        </h2>
+    
+
+      
+
+            <!-- Logo -->
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/" id="top-link"><span class="icon fa-home">Home</span></a></li>
+                        <li><a href="/searches/new" id="portfolio-link"><span class="icon fa-th">Search</span></a></li>
+                    </ul>
+                </nav>
+
+    </header>
+    <form action="/books/<%= result.id %>?_method=PUT" method="POST">
+        <input class="edit" type="text" value="<%=result.image_url%>" name="image_url"></input>
+        <br>
+        <input class="edit" type="text" value="<%=result.title%>" name="title"></input>
+        <br>
+        <input class="edit" type="text" value="<%=result.author%>" name="authors"></input>
+        <br>
+        <textarea id="textarea" class="edit" name="description"><%=result.description%></textarea>
+        <br>
+        <input class="edit" type="text" value="<%=result.isbn%>" name="isbn"></input>
+        <br>
+        <input class="edit" type="text" value="<%=result.categories%>" name="categories"></input>
+        <br>
+
+        <button type="submit">Update Book</button>
+
     </form>
 </body>
 
