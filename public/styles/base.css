@@ -21,6 +21,7 @@ header h1{
     bottom: 20px;
     width: 100%;
     height: 50px;
+    line-height: 50px;
 }
 header h2{
     background-color: #4a4a4a;
@@ -28,6 +29,7 @@ header h2{
     width: 100%;
     position: relative;
     bottom: 45px;
+    line-height: 40px;
 }
 #firstInput{   
     width: 70%;
@@ -60,4 +62,29 @@ form p{
     margin: auto;
     line-height: 50px;
 }
+.edit{
+    width: 70%;
+    height: 50px;
+    margin: 10px;
+    border-radius: 1%;
+    font-size: 18px;
+}
+#textarea{
+    height: 190px;
+}
+ul{
+    display: flex;
+}
+li{
+    list-style: none;
+    display: inline-flex;
+    margin: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-shadow: 3px 3px 3px #000000;
+   
 
+}

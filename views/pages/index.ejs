@@ -1,29 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="base.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <h2> <%=result.length %></h2>
+        <h1>Best Books</h1>
+        
 
-    </header>
+        <h2>Search by Title or Author
+
+        </h2>
+    
+
+      
+
+            <!-- Logo -->
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../" id="top-link"><span class="icon fa-home">Home</span></a></li>
+                        <li><a href="../searches/new" id="portfolio-link"><span class="icon fa-th">Search</span></a></li>
+                    </ul>
+                </nav>
+
+     
+
+
+    
+</header>
+
+    <!-- <header>
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../searches/new">Search</a></li>
+            </ul>
+        </nav>
+        <h1>Best Books</h1>
+        
+
+        <h2>Search by Title or Author</h2>
+
+
+    </header> -->
 
     <main>
+        <h2>You have <%=result.length %> books</h2>
         <% result.forEach(elm=>{ %>
-            <section class="book-container">
-                <img class="book-img" src="<%=elm.image_url%>">
-                <p class="book-title"><%=elm.title%> </p>
-                <p class="book-authors"><%=elm.author%></p>
-                <a href="books/<%=elm.id%>">show Details</a>
-            </section>
-            <% }) %>
-    
+        <section class="book-container">
+            <img class="book-img" src="<%=elm.image_url%>">
+            <p class="book-title"><%=elm.title%> </p>
+            <p class="book-authors"><%=elm.author%></p>
+            <a href="books/<%=elm.id%>">show Details</a>
+        </section>
+        <% }) %>
+
     </main>
 
     <footer></footer>
 </body>
+
 </html>
