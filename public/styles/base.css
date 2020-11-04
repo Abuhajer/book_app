@@ -23,14 +23,14 @@ header h1{
     height: 50px;
     line-height: 50px;
 }
-header h2{
+/* header h2{
     background-color: #4a4a4a;
     height: 40px;
     width: 100%;
     position: relative;
     bottom: 45px;
     line-height: 40px;
-}
+} */
 #firstInput{   
     width: 70%;
     height: 50px;
@@ -88,14 +88,14 @@ a{
    
 
 }
-.mobile-container {
+/* .mobile-container {
     max-width: 480px;
     margin: auto;
     background-color: #555;
     height: 500px;
     color: white;
     border-radius: 10px;
-  }
+  } */
   
   .topnav {
     overflow: hidden;
